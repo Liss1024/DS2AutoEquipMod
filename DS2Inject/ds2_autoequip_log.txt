@@ -1,0 +1,92 @@
+DS2 AutoEquip DLL loaded, waiting 2s for module...
+DS2 AutoEquip DLL loaded, waiting 2s for module...
+DS2 AutoEquip DLL loaded, waiting 2s for module...
+SetupHook: scanning for AoB...
+Found target at 00007FF672BADA77
+Hook installed successfully.
+DS2 AutoEquip DLL loaded, waiting 2s for module...
+SetupHook: scanning for AoB...
+Found target at 00007FF672BADA77
+Hook installed successfully.
+DS2 AutoEquip DLL loaded, waiting 2s for module...
+SetupHook: scanning for AoB...
+Found target at 00007FF672BADA77
+Hook installed successfully.
+DS2 AutoEquip DLL loaded, waiting 2s for module...
+SetupHook: scanning for AoB...
+Found target at 00007FF672BADA77
+Hook installed successfully.
+Regular check successfull! 
+DS2 AutoEquip DLL loaded, waiting 2s for module...
+SetupHook: scanning for AoB...
+Found target at 00007FF672BADA77
+Hook installed successfully.
+Regular check successfull! 
+DS2 AutoEquip DLL loaded, waiting 2s for module...
+SetupHook: scanning for AoB...
+Found target at 00007FF672BADA77
+Hook installed successfully.
+Regular check successfull! 
+DS2 AutoEquip DLL loaded, waiting 2s for module...
+SetupHook: scanning for AoB...
+Found target at 00007FF672BADA77
+Hook installed successfully.
+Regular check successfull! 
+DS2 AutoEquip DLL loaded, waiting 2s for module...
+SetupHook: scanning for AoB...
+Found target at 00007FF6C9A3DA77
+Hook installed successfully.
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+HookedFunc: rcx=00007FF3F78E0CF0 r8=8 entry=00007FF3F78E0D38 itemId=0
+TryAutoEquip: player=00007FF3F78E0CF0 slot=8 itemId=0
+Regular check successfull! 
+HookedFunc: rcx=00007FF3F78E0CF0 r8=8 entry=00007FF3F78E0D38 itemId=0
+TryAutoEquip: player=00007FF3F78E0CF0 slot=8 itemId=0
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+Regular check successfull! 
+DS2 AutoEquip DLL detched, removing hook...
