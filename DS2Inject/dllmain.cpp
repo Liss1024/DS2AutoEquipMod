@@ -58,8 +58,11 @@ static const char AOB_MASK[] = "xxxxxxxxxxxxx"; // 13 bytes exact match
 
 
 // Typedef for original function. We use a generic __fastcall with rcx/rdx/r8/r9 parameters.
-using t_orig_func = void(__fastcall*)(uint64_t rcx, uint64_t rdx, uint64_t r8, uint64_t r9);
-static t_orig_func orig_func = nullptr;
+//using t_orig_func = void(__fastcall*)(uint64_t rcx, uint64_t rdx, uint64_t r8, uint64_t r9);
+//static t_orig_func orig_func = nullptr;
+
+//typedef void(__fastcall* OriginalFuncType)(void* rcx, void* rdx, uint32_t r8, uint32_t r9);
+//static OriginalFuncType orig_func = nullptr;
 
 
 // Helper: write debug message to file (append)
@@ -76,11 +79,21 @@ static void WriteLog(const char* fmt, ...) {
 
     FILE* f = nullptr;
     if (fopen_s(&f, "F:\\C++\\DS2Inject\\DS2Inject\\ds2_autoequip_log.txt", "a") == 0 && f) {
-        fprintf(f, "%s", buf);
+        fprintf(f, "%s\n", buf);
         fclose(f);
     }
 }
 
+static void ClearLog() {
+    FILE* f = nullptr;
+    if (fopen_s(&f, "F:\\C++\\DS2Inject\\DS2Inject\\ds2_autoequip_log.txt", "w") == 0 && f) {
+        fclose(f);
+        WriteLog("");
+    }
+    else {
+        OutputDebugStringA("Failed to clear log file");
+    }
+}
 
 // Simple pattern scan in module memory (search only in DarkSoulsII.exe module)
 static uintptr_t PatternScanModule(const char* moduleName, const unsigned char* pattern, const char* mask) {
@@ -133,7 +146,7 @@ static uint16_t ReadU16(uint64_t addr) {
         val = *(uint16_t*)(addr);
     }
     __except (EXCEPTION_EXECUTE_HANDLER) {
-        WriteLog("ReadU16: exception reading %p\n", (void*)addr);
+        WriteLog("ReadU16: exception reading %p", (void*)addr);
     }
     return val;
 }
@@ -141,77 +154,104 @@ static uint16_t ReadU16(uint64_t addr) {
 // Your auto-equip logic stub. Replace/implement with actual mapping itemId->type and equip calls.
 static void TryAutoEquipForItem(uint64_t playerPtr, uint64_t slotIndex, uint16_t itemId) {
     // Example: log and no-op
-    WriteLog("TryAutoEquip: player=%p slot=%llu itemId=%u\n", (void*)playerPtr, (unsigned long long)slotIndex, (unsigned)itemId);
+    WriteLog("TryAutoEquip: player=%p slot=%llu itemId=%u", (void*)playerPtr, (unsigned long long)slotIndex, (unsigned)itemId);
 
 
     // TODO: Determine item type from itemId (weapon/armor/ring). Use Param files or community tables.
     // TODO: Find and call the game's internal equip function, or write to equipment slots safely.
 }
 
-// Hook function (same calling convention as original). We call original, then read memory.
-void __fastcall HookedFunc(uint64_t rcx, uint64_t rdx, uint64_t r8, uint64_t r9) {
-    // Call original first so game writes the item into inventory
-    orig_func(rcx, rdx, r8, r9);
+// The function uses x64 fastcall convention
+// We define it with the parameters we know it uses
+typedef void(__fastcall* ItemPickupFuncType)(void* playerObj, void* itemData, uint32_t unknown1, uint32_t unknown2);
+static ItemPickupFuncType orig_func = nullptr;
 
 
-    // Compute address: from CE: mov [rcx + rdx*8 + 08], ax (note CE used rdx after movsx from r8w and add rdx,rdx)
-    // But you told us address was rcx + r8*8 + 0x08; adjust formula to match your observations.
-    // We'll assume slotIndex = (uint64_t)r8 (lower 32 bits).
-    uint64_t slotIndex = (uint64_t)(r8 & 0xFFFFFFFF);
-    uint64_t entryAddr = rcx + slotIndex * 8 + 0x08; // matches CE output
+void __fastcall HookedPickupFunc(void* playerObj, void* itemData, uint32_t unknown1, uint32_t unknown2) {
+    // itemData is the RDX parameter, which contains the item structure
+    if (itemData) {
+        uint32_t itemId = *(uint32_t*)((uintptr_t)itemData + 4);
+        WriteLog("Picked up item: 0x%08X", itemId);
 
+        // Add your auto-equip logic here
+        
+    }
 
-    uint16_t itemId = ReadU16(entryAddr);
-
-
-    // Log details
-    WriteLog("HookedFunc: rcx=%p r8=%llu entry=%p itemId=%u\n", (void*)rcx, (unsigned long long)slotIndex, (void*)entryAddr, (unsigned)itemId);
-
-
-    // Run auto-equip logic
-    TryAutoEquipForItem(rcx, slotIndex, itemId);
+    // Call the original function with all parameters
+    orig_func(playerObj, itemData, unknown1, unknown2);
 }
+
+// Our hook function MUST match the calling convention and parameters
+void __fastcall HookedFunc(void* playerObj, void* itemData, uint32_t itemCount, uint32_t unknown2) {
+    if (!itemData || itemCount == 0) {
+        WriteLog("No items to process");
+        orig_func(playerObj, itemData, itemCount, unknown2);
+        return;
+    }
+
+    WriteLog("Pickup: %d items", itemCount);
+
+    // Process all items
+    for (uint32_t i = 0; i < itemCount; i++) {
+        uint8_t* itemPtr = (uint8_t*)itemData + (i * 0x10);
+        uint32_t itemId = *(uint32_t*)(itemPtr + 4);
+
+        WriteLog("  Item %d: ID=0x%08X", i, itemId);
+
+        // Your auto-equip decision logic
+
+    }
+
+    // Call original function to handle actual pickup
+    orig_func(playerObj, itemData, itemCount, unknown2);
+}
+
 
 // Setup MinHook and create the hook
 static bool SetupHook() {
-    WriteLog("SetupHook: scanning for AoB...\n");
+    WriteLog("SetupHook: scanning for AoB...");
 
+    HMODULE moduleBase = GetModuleHandleA("DarkSoulsII.exe");
 
-    uintptr_t target = PatternScanModule("DarkSoulsII.exe", AOB_PATTERN, AOB_MASK);
-    if (!target) {
-        WriteLog("PatternScanModule failed.\n");
+    // Hook at the actual function start (1A7475)
+    uintptr_t target = (uintptr_t)moduleBase + 0x1A7475;
+
+    // Verify the function prologue
+    unsigned char expected_prologue[] = { 0x56, 0x57, 0x41, 0x56, 0x48, 0x83, 0xEC, 0x30 };
+    if (memcmp((void*)target, expected_prologue, sizeof(expected_prologue)) != 0) {
+        WriteLog("Function prologue doesn't match!");
         return false;
     }
-    WriteLog("Found target at %p\n", (void*)target);
 
+    WriteLog("Hooking item pickup function at: %p", (void*)target);
 
     if (MH_Initialize() != MH_OK) {
-        WriteLog("MH_Initialize failed\n");
+        WriteLog("MH_Initialize failed");
         return false;
     }
 
 
     // Create hook on target (hook the function start)
     if (MH_CreateHook((LPVOID)target, &HookedFunc, reinterpret_cast<LPVOID*>(&orig_func)) != MH_OK) {
-        WriteLog("MH_CreateHook failed\n");
+        WriteLog("MH_CreateHook failed");
         return false;
     }
 
 
     if (MH_EnableHook((LPVOID)target) != MH_OK) {
-        WriteLog("MH_EnableHook failed\n");
+        WriteLog("MH_EnableHook failed");
         return false;
     }
 
 
-    WriteLog("Hook installed successfully.\n");
+    WriteLog("Hook installed successfully.");
     return true;
 }
 
 
 // Cleanup
 static void RemoveHook() {
-    WriteLog("DS2 AutoEquip DLL detched, removing hook...\n");
+    WriteLog("DS2 AutoEquip DLL detched, removing hook...");
     MH_DisableHook(MH_ALL_HOOKS);
     MH_Uninitialize();
 }
@@ -219,17 +259,13 @@ static void RemoveHook() {
 BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserved) {
     switch (ul_reason_for_call) {
     case DLL_PROCESS_ATTACH:
+        ClearLog();
         DisableThreadLibraryCalls(hModule);
         // Create a thread to run initialization so we don't block DllMain
         CreateThread(nullptr, 0, (LPTHREAD_START_ROUTINE)[](LPVOID)->DWORD {
             WriteLog("DS2 AutoEquip DLL loaded, waiting 2s for module...\n");
             //Sleep(2000);
             SetupHook();
-            while (true)
-            {
-                WriteLog("Regular check successfull! \n");
-                Sleep(2000);
-            }
             return 0;
         }, nullptr, 0, nullptr);
         break;
