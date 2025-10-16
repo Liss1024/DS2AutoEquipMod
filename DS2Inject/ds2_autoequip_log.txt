@@ -2,9 +2,154 @@
 DS2 AutoEquip DLL loaded, waiting 2s for module...
 
 SetupHook: scanning for AoB...
-Hooking item pickup function at: 00007FF6C9A37475
+Hooking item pickup function at: 00007FF702697475
 Hook installed successfully.
-Pickup: 2 items
-  Item 0: ID=0x039D23F0
-  Item 1: ID=0x001053B0
+Setting up event-logging hooks...
+UI hook target:      00007FF702502793 (module + 0x12793)
+Dispatch hook target:00007FF702516E70 (module + 0x26E70)
+Event-logging hooks installed.
+
+[DISPATCH_HOOK] >>> FUN_140026e70 called
+  RCX (param1) = 0x00007ff3f79884f8
+  RDX (param2 ptr) = 0x000000d03f8fe910
+  *param2 (event_obj_ptr) = 0x00007ff3f79b8210
+  [param1+0x2008] slot_id = 0x00000000 (0)
+  [param1+0x2028] item_ptr = 0x0000000000000000
+  [event_obj] vtable = 0x00007ff7035a0bd0
+  [event_obj+0x10] = 0x00000000 (0)
+  [event_obj+0x14] = 0x00000000 (0)
+
+[DISPATCH_HOOK] >>> FUN_140026e70 called
+  RCX (param1) = 0x00007ff3f7989138
+  RDX (param2 ptr) = 0x000000d03f8fe8f0
+  *param2 (event_obj_ptr) = 0x00007ff3f79a1e00
+  [param1+0x2008] slot_id = 0x00000000 (0)
+  [param1+0x2028] item_ptr = 0x00007ff3f798ca48
+    [item_ptr+0x00] vtable = 0x0000000000000000
+    [item_ptr+0x10] possible item_id = 0x00000000 (0)
+  [event_obj] vtable = 0x00007ff70359f5e8
+  [event_obj+0x10] = 0x00000000 (0)
+  [event_obj+0x14] = 0x00000000 (0)
+
+[DISPATCH_HOOK] >>> FUN_140026e70 called
+  RCX (param1) = 0x00007ff3f7a13050
+  RDX (param2 ptr) = 0x000000d03f8fe8c0
+  *param2 (event_obj_ptr) = 0x00007ff3f79a1770
+  [param1+0x2008] slot_id = 0x00000000 (0)
+  [param1+0x2028] item_ptr = 0x0000000000000000
+  [event_obj] vtable = 0x00007ff70359f420
+  [event_obj+0x10] = 0x00000000 (0)
+  [event_obj+0x14] = 0x00007FF3 (32755)
+
+[DISPATCH_HOOK] >>> FUN_140026e70 called
+  RCX (param1) = 0x00007ff3f7989138
+  RDX (param2 ptr) = 0x000000d03f8fe8f0
+  *param2 (event_obj_ptr) = 0x00007ff3f79a1e00
+  [param1+0x2008] slot_id = 0x00000000 (0)
+  [param1+0x2028] item_ptr = 0x00007ff3f798ca48
+    [item_ptr+0x00] vtable = 0x0000000000000000
+    [item_ptr+0x10] possible item_id = 0x00000000 (0)
+  [event_obj] vtable = 0x00007ff70359f5e8
+  [event_obj+0x10] = 0x00000000 (0)
+  [event_obj+0x14] = 0x00000000 (0)
+
+[DISPATCH_HOOK] >>> FUN_140026e70 called
+  RCX (param1) = 0x00007ff3f7a34050
+  RDX (param2 ptr) = 0x000000d03f8fe8c0
+  *param2 (event_obj_ptr) = 0x00007ff3f79a1af0
+  [param1+0x2008] slot_id = 0x00000000 (0)
+  [param1+0x2028] item_ptr = 0x0000000000000000
+  [event_obj] vtable = 0x00007ff70359f420
+  [event_obj+0x10] = 0x00000000 (0)
+  [event_obj+0x14] = 0x00007FF3 (32755)
+
+[DISPATCH_HOOK] >>> FUN_140026e70 called
+  RCX (param1) = 0x00007ff3f7a90068
+  RDX (param2 ptr) = 0x000000d03f8fe3b8
+  *param2 (event_obj_ptr) = 0x00007ff3f79a1ee0
+  [param1+0x2008] slot_id = 0xF77B5840 (4152055872)
+  [param1+0x2028] item_ptr = 0xffffffff00000000
+    [item_ptr+0x00] vtable = 0x0000000000000000
+    [item_ptr+0x10] possible item_id = 0x00000000 (0)
+  [event_obj] vtable = 0x00007ff70359f5e8
+  [event_obj+0x10] = 0x00000000 (0)
+  [event_obj+0x14] = 0x00000000 (0)
+
+[DISPATCH_HOOK] >>> FUN_140026e70 called
+  RCX (param1) = 0x00007ff3f7989138
+  RDX (param2 ptr) = 0x000000d03f8fe7e0
+  *param2 (event_obj_ptr) = 0x00007ff3f7a9e000
+  [param1+0x2008] slot_id = 0x00000000 (0)
+  [param1+0x2028] item_ptr = 0x00007ff3f798ca48
+    [item_ptr+0x00] vtable = 0x0000000000000000
+    [item_ptr+0x10] possible item_id = 0x00000000 (0)
+  [event_obj] vtable = 0x00007ff70359f420
+  [event_obj+0x10] = 0x00000000 (0)
+  [event_obj+0x14] = 0x00000000 (0)
+
+[DISPATCH_HOOK] >>> FUN_140026e70 called
+  RCX (param1) = 0x00007ff3f7a90068
+  RDX (param2 ptr) = 0x000000d03f8fe3b8
+  *param2 (event_obj_ptr) = 0x00007ff3f79a1e70
+  [param1+0x2008] slot_id = 0xF77B5840 (4152055872)
+  [param1+0x2028] item_ptr = 0xffffffff00000000
+    [item_ptr+0x00] vtable = 0x0000000000000000
+    [item_ptr+0x10] possible item_id = 0x00000000 (0)
+  [event_obj] vtable = 0x00007ff70359f5e8
+  [event_obj+0x10] = 0x00000000 (0)
+  [event_obj+0x14] = 0x00000000 (0)
+
+[DISPATCH_HOOK] >>> FUN_140026e70 called
+  RCX (param1) = 0x00007ff3f7989138
+  RDX (param2 ptr) = 0x000000d03f8fe7e0
+  *param2 (event_obj_ptr) = 0x00007ff3f7a9e000
+  [param1+0x2008] slot_id = 0x00000000 (0)
+  [param1+0x2028] item_ptr = 0x00007ff3f798ca48
+    [item_ptr+0x00] vtable = 0x0000000000000000
+    [item_ptr+0x10] possible item_id = 0x00000000 (0)
+  [event_obj] vtable = 0x00007ff70359f420
+  [event_obj+0x10] = 0x00000000 (0)
+  [event_obj+0x14] = 0x00000000 (0)
+
+[DISPATCH_HOOK] >>> FUN_140026e70 called
+  RCX (param1) = 0x00007ff3f77bc9c0
+  RDX (param2 ptr) = 0x000000d03f8fefc0
+  *param2 (event_obj_ptr) = 0x00007ff3f797c640
+  [param1+0x2008] slot_id = 0x030007E4 (50333668)
+  [param1+0x2028] item_ptr = 0x0000000000000001
+    [item_ptr+0x00] vtable = 0x0000000000000000
+    [item_ptr+0x10] possible item_id = 0x00000000 (0)
+  [event_obj] vtable = 0x00007ff7035a02f0
+  [event_obj+0x10] = 0x00000000 (0)
+  [event_obj+0x14] = 0x00000000 (0)
+
+[DISPATCH_HOOK] >>> FUN_140026e70 called
+  RCX (param1) = 0x00007ff3f797d058
+  RDX (param2 ptr) = 0x000000d03f8ff140
+  *param2 (event_obj_ptr) = 0x00007ff3f797f000
+  [param1+0x2008] slot_id = 0x00000002 (2)
+  [param1+0x2028] item_ptr = 0x00007ff3f7986210
+    [item_ptr+0x00] vtable = 0x00007ff7036cde48
+    [item_ptr+0x10] possible item_id = 0x036CDE00 (57466368)
+  [event_obj] vtable = 0x00007ff70359f5e8
+  [event_obj+0x10] = 0x00000000 (0)
+  [event_obj+0x14] = 0x00000000 (0)
+
+[DISPATCH_HOOK] >>> FUN_140026e70 called
+  RCX (param1) = 0x00007ff3f7810658
+  RDX (param2 ptr) = 0x000000d03f8ff3a0
+  *param2 (event_obj_ptr) = 0x0000000000000000
+  [param1+0x2008] slot_id = 0x3F800000 (1065353216)
+  [param1+0x2028] item_ptr = 0x00007ff3f7812600
+    [item_ptr+0x00] vtable = 0x00007ff3f7812380
+    [item_ptr+0x10] possible item_id = 0x00000001 (1)
+
+[DISPATCH_HOOK] >>> FUN_140026e70 called
+  RCX (param1) = 0x00007ff3f7810658
+  RDX (param2 ptr) = 0x000000d03f8ff330
+  *param2 (event_obj_ptr) = 0x0000000000000000
+  [param1+0x2008] slot_id = 0x3F800000 (1065353216)
+  [param1+0x2028] item_ptr = 0x00007ff3f7812600
+    [item_ptr+0x00] vtable = 0x00007ff3f7812380
+    [item_ptr+0x10] possible item_id = 0x00000001 (1)
 DS2 AutoEquip DLL detched, removing hook...
