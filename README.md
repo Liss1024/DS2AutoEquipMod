@@ -6,5 +6,12 @@ How does it work:
 2. In the DLL, we need to make a hook for a function that triggers whenever player picks up an item. I've succesfully did this part.
 3. Then we need to equip new item, using ID received from first hook. I tried to just rewrite ID at addresses, where I think game stores equiped item IDs; I've used Cheat Engine and cheat table for DS2 for this. Sadly, this doesn't change equiped items; I have multiple theories why, but that's not really relevant.
 
- So the problem is to figure out how to make the game equip items. If you want to have a try at it - be my guest. 
- You can text me in Discord, if you need more details @Liss1024
+How to run this:
+Injecting DS2 will most likely get you softbanned. So work only in Steam Offline mode, and I recommend on a copy of game files.
+1. Run DS2
+2. Wait for it to show something except black/white screen
+3. Run x64/Release/DLLInjector. It works only with DLL named  DS2Inject.dll.
+4. It will automatically inject and start printing logs. You can find inject_Log.txt in the same folder, and ds2_autoequip_log.txt in DS2Inject/DS2Inject folder. Use the last one to see logs from DLL, as the first one only logs about injection itself.
+
+So the problem is to figure out how to make the game equip items. If you want to have a try at it - be my guest. Here is a link to a Reddit post with a more detailed explanation: https://www.reddit.com/r/DarkSouls2/comments/1o8d9gv/ive_tried_to_create_an_autoequip_mod_and_ive/
+You can text me in Discord, if you need more details @Liss1024
