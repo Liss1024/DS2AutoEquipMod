@@ -1,0 +1,156 @@
+[23:48:8] ========== DS2Injector started ==========
+[23:48:8] Looking for process: DarkSoulsII.exe
+[23:48:8] Found DarkSoulsII.exe, PID = 21868
+[23:48:8] Remote LoadLibraryW returned: 0x2218459136
+[23:48:8] Injection succeeded!
+[23:48:8] ========== DS2Injector finished ==========
+
+[23:57:17] ========== DS2Injector started ==========
+[23:57:17] Looking for process: DarkSoulsII.exe
+[23:57:58] ========== DS2Injector started ==========
+[23:57:58] Looking for process: DarkSoulsII.exe
+[23:57:58] Found DarkSoulsII.exe, PID = 27016
+[23:57:58] Remote LoadLibraryW returned: 0x2230845440
+[23:57:58] Injection succeeded!
+[23:57:58] ========== DS2Injector finished ==========
+
+[2:7:43] ========== DS2Injector started ==========
+[2:7:43] Looking for process: DarkSoulsII.exe
+[2:7:43] Found DarkSoulsII.exe, PID = 1480
+[2:7:48] Remote LoadLibraryW returned: 0x259
+[2:7:48] Injection succeeded!
+[2:7:48] ========== DS2Injector finished ==========
+
+[2:20:44] ========== DS2Injector started ==========
+[2:20:44] Looking for process: DarkSoulsII.exe
+[2:20:44] Found DarkSoulsII.exe, PID = 17528
+[2:20:45] Remote LoadLibraryW returned: 0x2313814016
+[2:20:45] Injection succeeded!
+[2:20:45] ========== DS2Injector finished ==========
+
+[2:28:44] ========== DS2Injector started ==========
+[2:28:44] Looking for process: DarkSoulsII.exe
+[2:28:44] Found DarkSoulsII.exe, PID = 1020
+[2:28:44] Remote LoadLibraryW returned: 0x2313814016
+[2:28:44] Injection succeeded!
+[2:28:44] ========== DS2Injector finished ==========
+
+[2:51:27] ========== DS2Injector started ==========
+[2:51:27] Looking for process: DarkSoulsII.exe
+[2:51:27] Found DarkSoulsII.exe, PID = 15424
+[2:51:27] Remote LoadLibraryW returned: 0x2230845440
+[2:51:27] Injection succeeded!
+[2:51:27] ========== DS2Injector finished ==========
+
+[2:54:39] ========== DS2Injector started ==========
+[2:54:39] Looking for process: DarkSoulsII.exe
+[2:54:39] Found DarkSoulsII.exe, PID = 4164
+[2:54:39] Remote LoadLibraryW returned: 0x2218459136
+[2:54:39] Injection succeeded!
+[2:54:39] ========== DS2Injector finished ==========
+
+[2:57:24] ========== DS2Injector started ==========
+[2:57:24] Looking for process: DarkSoulsII.exe
+[2:57:24] Found DarkSoulsII.exe, PID = 21316
+[2:57:24] Remote LoadLibraryW returned: 0x2230845440
+[2:57:24] Injection succeeded!
+[2:57:24] ========== DS2Injector finished ==========
+
+[3:0:18] ========== DS2Injector started ==========
+[3:0:18] Looking for process: DarkSoulsII.exe
+[3:0:19] Found DarkSoulsII.exe, PID = 28176
+[3:0:19] Remote LoadLibraryW returned: 0x2230845440
+[3:0:19] Injection succeeded!
+[3:0:19] ========== DS2Injector finished ==========
+
+[3:3:47] ========== DS2Injector started ==========
+[3:3:47] Looking for process: DarkSoulsII.exe
+[3:3:47] Found DarkSoulsII.exe, PID = 26672
+[3:3:47] Remote LoadLibraryW returned: 0x2230845440
+[3:3:47] Injection succeeded!
+[3:3:47] ========== DS2Injector finished ==========
+
+[3:6:56] ========== DS2Injector started ==========
+[3:6:56] Looking for process: DarkSoulsII.exe
+[3:6:56] Found DarkSoulsII.exe, PID = 13936
+[3:6:56] Remote LoadLibraryW returned: 0x2230845440
+[3:6:56] Injection succeeded!
+[3:6:56] ========== DS2Injector finished ==========
+
+[4:9:16] ========== DS2Injector started ==========
+[4:9:16] Looking for process: DarkSoulsII.exe
+[4:9:16] Found DarkSoulsII.exe, PID = 23640
+[4:9:16] Remote LoadLibraryW returned: 0x2259681280
+[4:9:16] Injection succeeded!
+[4:9:16] ========== DS2Injector finished ==========
+
+[4:13:54] ========== DS2Injector started ==========
+[4:13:54] Looking for process: DarkSoulsII.exe
+[4:13:54] Found DarkSoulsII.exe, PID = 14276
+[4:13:54] Remote LoadLibraryW returned: 0x2259681280
+[4:13:54] Injection succeeded!
+[4:13:54] ========== DS2Injector finished ==========
+
+[12:3:2] ========== DS2Injector started ==========
+[12:3:2] Looking for process: DarkSoulsII.exe
+[12:3:2] Found DarkSoulsII.exe, PID = 4368
+[12:3:3] Remote LoadLibraryW returned: 0x2139815936
+[12:3:3] Injection succeeded!
+[12:3:3] ========== DS2Injector finished ==========
+
+[12:4:34] ========== DS2Injector started ==========
+[12:4:34] Looking for process: DarkSoulsII.exe
+[12:4:34] Found DarkSoulsII.exe, PID = 18076
+[12:4:34] Remote LoadLibraryW returned: 0x2247163904
+[12:4:34] Injection succeeded!
+[12:4:34] ========== DS2Injector finished ==========
+
+[12:10:45] ========== DS2Injector started ==========
+[12:10:45] Looking for process: DarkSoulsII.exe
+[12:10:45] Found DarkSoulsII.exe, PID = 9628
+[12:10:45] Remote LoadLibraryW returned: 0x2584608768
+[12:10:45] Injection succeeded!
+[12:10:45] ========== DS2Injector finished ==========
+
+[12:12:51] ========== DS2Injector started ==========
+[12:12:51] Looking for process: DarkSoulsII.exe
+[12:12:51] Found DarkSoulsII.exe, PID = 13616
+[12:12:51] Remote LoadLibraryW returned: 0x2947612672
+[12:12:51] Injection succeeded!
+[12:12:51] ========== DS2Injector finished ==========
+
+[12:14:39] ========== DS2Injector started ==========
+[12:14:39] Looking for process: DarkSoulsII.exe
+[12:14:39] Found DarkSoulsII.exe, PID = 26840
+[12:14:39] Remote LoadLibraryW returned: 0x2960195584
+[12:14:39] Injection succeeded!
+[12:14:39] ========== DS2Injector finished ==========
+
+[12:15:59] ========== DS2Injector started ==========
+[12:15:59] Looking for process: DarkSoulsII.exe
+[12:15:59] Found DarkSoulsII.exe, PID = 8336
+[12:15:59] Remote LoadLibraryW returned: 0x2970812416
+[12:15:59] Injection succeeded!
+[12:15:59] ========== DS2Injector finished ==========
+
+[23:59:44] ========== DS2Injector started ==========
+[23:59:44] Looking for process: DarkSoulsII.exe
+[23:59:44] Found DarkSoulsII.exe, PID = 16168
+[23:59:44] Remote LoadLibraryW returned: 0x2842361856
+[23:59:44] Injection succeeded!
+[23:59:44] ========== DS2Injector finished ==========
+
+[15:38:9] ========== DS2Injector started ==========
+[15:38:9] Looking for process: DarkSoulsII.exe
+[15:38:9] Found DarkSoulsII.exe, PID = 10668
+[15:38:9] Remote LoadLibraryW returned: 0x2536636416
+[15:38:9] Injection succeeded!
+[15:38:9] ========== DS2Injector finished ==========
+
+[16:9:40] ========== DS2Injector started ==========
+[16:9:40] Looking for process: DarkSoulsII.exe
+[16:9:40] Found DarkSoulsII.exe, PID = 13044
+[16:9:40] Remote LoadLibraryW returned: 0x2952790016
+[16:9:40] Injection succeeded!
+[16:9:40] ========== DS2Injector finished ==========
+
